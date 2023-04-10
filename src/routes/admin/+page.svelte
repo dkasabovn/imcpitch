@@ -10,6 +10,7 @@ let userData = {};
 let ctx;
 let chartCanvas;
 let chart;
+let avgPrice = 0;
 
 const labels = (() => {
 	const labels = [];
@@ -32,6 +33,7 @@ const socketInit = () => {
 
 	socket.on("admin_data", (utils, data) => {
 		userData = data;
+		avgPrice = utils.avg;
 		updateChart(utils);
 	});
 }
@@ -220,6 +222,7 @@ onDestroy(async () => {
 			<div id="loading-bar-spinner" class="spinner"><div class="spinner-icon"></div></div>
 		</div>
 	{/if}
+	<div class="my-4 bg-blue-700 px-3 py-2 text-white">{avgPrice}</div>
 	<div class="grid grid-cols-6 gap-2 mt-10 max-w-7xl">
 		{#each Object.keys(userData) as userKey}
 			<div class="bg-purp text-white px-3 py-1 rounded-lg">{userData[userKey].toFixed(2)}</div>
