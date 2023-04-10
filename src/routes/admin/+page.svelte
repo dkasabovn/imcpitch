@@ -21,7 +21,7 @@ const labels = (() => {
 
 
 const socketInit = () => {
-	socket = io("http://3.93.173.89:3000", {
+	socket = io("https://54.197.24.74", {
 		withCredentials: false,
 	});
 
