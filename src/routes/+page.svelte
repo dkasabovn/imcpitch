@@ -3,7 +3,7 @@ import { onMount, onDestroy } from "svelte";
 import { io } from "socket.io-client";
 
 let socket;
-let bet_input = 0;
+let bet_input = 10000;
 let bet_size = 0;
 let loading = false;
 let pnl = null;
