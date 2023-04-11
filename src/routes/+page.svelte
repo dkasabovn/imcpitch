@@ -51,7 +51,7 @@ onDestroy(() => {
 
 <div class="w-full min-h-screen flex-col flex items-center bg-slate-900 pt-20">
 	<div>
-		<input type="number" bind:value={bet_input} class="bg-blue-700 py-2 px-4 text-white rounded-lg mr-4"/>	
+		<input type="number" min="9000" max="11000" bind:value={bet_input} class="bg-blue-700 py-2 px-4 text-white rounded-lg mr-4"/>	
 		<button on:click={submitBet} class="bg-blue-500 px-4 py-2 rounded-lg text-white ring-2">Submit Bet</button>
 	</div>
 	{#if loading}
